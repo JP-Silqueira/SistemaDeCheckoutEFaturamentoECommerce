@@ -23,15 +23,13 @@ public class PagamentoCartao extends FormaPagamento implements EmitenteNotaFisca
 
             this.status = "APROVADO";
         }
-        // O método close() de GatewayPagamento é chamado automaticamente aqui, mesmo se a exceção for lançada!
+        // O metodo close() de GatewayPagamento é chamado automaticamente aqui, mesmo se a exceção for lançada
     }
 
     @Override
     public void emitirNFe() {
-        // Mascarando o cartão e deixando apenas os 4 últimos dígitos
         String cartaoMascarado = "**** **** **** " + numeroCartao.substring(Math.max(0, numeroCartao.length() - 4));
 
-        // Calculando os 15% de imposto
         double imposto = this.valorTotal * 0.15;
 
         System.out.println("\n=== NOTA FISCAL ELETRÔNICA ===");

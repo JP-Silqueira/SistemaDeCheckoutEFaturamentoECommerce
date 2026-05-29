@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<FormaPagamento> carrinho = new ArrayList<>();
 
-        // Adicionando os 4 pagamentos conforme a regra da atividade
+        // Adicionando os 4 pagamentos
         carrinho.add(new PagamentoPix(150.00, "123.456.789-00")); // Pix válido
         carrinho.add(new PagamentoPix(200.00, "")); // Pix inválido (chave vazia)
         carrinho.add(new PagamentoCartao(500.00, "1234567890123456", 10)); // Cartão válido
@@ -19,7 +19,7 @@ public class Main {
                 p.processar();
                 System.out.println("Pagamento processado! Status: " + p.getStatus());
 
-                // Casting dinâmico: Se implementar EmitenteNotaFiscal, pode emitir NFe
+                //Se implementar EmitenteNotaFiscal, pode emitir NFe
                 if (p instanceof EmitenteNotaFiscal) {
                     ((EmitenteNotaFiscal) p).emitirNFe();
                 }

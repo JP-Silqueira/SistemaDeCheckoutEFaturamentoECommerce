@@ -14,7 +14,8 @@ public abstract class FormaPagamento {
     // Metodo abstrato que as classes filhas são obrigadas a implementar
     public abstract void processar();
 
-    // Getters
+    //<editor-fold defaultstate="collapsed" desc="getters">
+
     public String getStatus() {
         return status;
     }
@@ -22,4 +23,6 @@ public abstract class FormaPagamento {
     public double getValorTotal() {
         return valorTotal;
     }
+
+    //</editor-fold>
 }
